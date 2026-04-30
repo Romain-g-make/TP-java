@@ -17,13 +17,10 @@
 - Emprunter un livre
 - Retourner un livre
 
----
 
 ## Language utilisée
 
 - Java
-
----
 
 
 ## Auteurs
