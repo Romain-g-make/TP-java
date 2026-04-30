@@ -1,7 +1,5 @@
 # Bibliotheque Java
 
----
-
 ## Fonctionnalités
 
 ### Techniques utilisées
