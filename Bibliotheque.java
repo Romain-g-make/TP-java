@@ -24,12 +24,10 @@ public class Bibliotheque {
         return id_max;
     }
 
-    public ArrayList<String> showBooks() {
-        ArrayList<String> temp = new ArrayList<>();
+    public void showBooks() {
         for(int i = 0; i < bibliotheque.size(); i ++) {
-            temp.add(bibliotheque.get(i).get_info());
+            System.out.println(bibliotheque.get(i).get_info());
         }
-        return temp;
     }
 
     public void addBook(String title,String author) {
