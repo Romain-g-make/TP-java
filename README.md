@@ -36,8 +36,9 @@
 ### Utilisation 
 
 ```
-
 git clone https://github.com/Romain-g-make/TP-java.git
-javac *.java -d build && java -cp build Main
+```
 
+```
+javac *.java -d build && java -cp build Main
 ```
