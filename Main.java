@@ -30,6 +30,7 @@ public class Main {
                     int id = Integer.parseInt(inputID.next());
                     bibliotheque.loan(id);
                 } else if (choice == 4) {
+                    bibliotheque.showBooks();
                     System.out.println("-- Retour d'un livre --\nQuel est l'ID du livre ?");
                     Scanner inputID = new Scanner(System.in);
                     int id = Integer.parseInt(inputID.next());
