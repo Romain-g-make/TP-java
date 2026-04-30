@@ -41,7 +41,7 @@ public class Bibliotheque {
         Scanner inputAuthor = new Scanner(System.in);
         String author = inputAuthor.next();
         int id = getIdMax(getIds());
-        Book livre = new Book(title, author, id);
+        Book livre = new Book(title, author, id+1);
         bibliotheque.add(livre);
         System.out.println("Vous venez de créer un livre !");
     }
