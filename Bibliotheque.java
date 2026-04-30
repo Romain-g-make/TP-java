@@ -25,8 +25,11 @@ public class Bibliotheque {
     }
 
     public void showBooks() {
+        if (bibliotheque.size() == 0) {
+            System.out.println("> Aucun livre pour le moment !");
+        }
         for(int i = 0; i < bibliotheque.size(); i ++) {
-            System.out.println(bibliotheque.get(i).get_info());
+            System.out.println("> " + bibliotheque.get(i).get_info());
         }
     }
 
