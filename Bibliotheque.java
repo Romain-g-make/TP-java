@@ -33,9 +33,9 @@ public class Bibliotheque {
         return temp;
     }
 
-    public void addBook(title,author) {
-        id = getIdMax();
-        livre = new Book{title,author,id};
+    public void addBook(String title, String author) {
+        Integer id = getIdMax();
+        Book[] livre = new Book{title,author,id};
         bibliotheque.add(book);
     }
 
