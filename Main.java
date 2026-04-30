@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int choice;
-        String titre;
-        String autheur;
-
+        Bibliotheque bibliotheque = new Bibliotheque();
         try {
             while (true) {
                 System.out.println("Bienvenu dans notre nouvelle bibliothèque.\nQue voulez-vous faire ?\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Partir de la bibliothèque");
@@ -15,18 +13,25 @@ public class Main {
                 if (choice == 1) {
                     System.out.println("-- Ajout d'un livre --\nQuel est le titre du livre ?");
                     Scanner inputTitle = new Scanner(System.in);
-                    titre = inputTitle.next();
+                    String titre = inputTitle.next();
                     System.out.println("Quel est l'autheur du livre ?");
-                    Scanner inputAutheur = new Scanner(System.in);
-                    autheur = inputAutheur.next();
-
+                    Scanner inputAuteur = new Scanner(System.in);
+                    String auteur = inputAuteur.next();
+                    bibliotheque.addBook(titre, auteur);
                     System.out.println("Vous venez de créer un livre !");
                 } else if (choice == 2) {
-                    // bibliothèque.showBooks;
+                    bibliotheque.showBooks();
                 } else if (choice == 3) {
-                    // bibliothèque.loanBook;
+                    bibliotheque.showBooks();
+                    System.out.println("-- Emprunt d'un livre --\nQuel est l'ID du livre ?");
+                    Scanner inputID = new Scanner(System.in);
+                    int id = Integer.parseInt(inputID.next());
+                    bibliotheque.loan(id);
                 } else if (choice == 4) {
-                    // bibliothèque.returnBook;
+                    System.out.println("-- Retour d'un livre --\nQuel est l'ID du livre ?");
+                    Scanner inputID = new Scanner(System.in);
+                    int id = Integer.parseInt(inputID.next());
+                    bibliotheque.retbook(id);
                 } else if (choice == 5) {
                     break;
                 }
