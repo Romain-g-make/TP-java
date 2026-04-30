@@ -15,11 +15,10 @@ public class Bibliotheque {
 
     public int getIdMax(ArrayList ids){
         int id_max = 0;
-        []arr = new int [ids.size()];
-        ids.toArray(arr);
         for (int i = 0; i < ids.size(); i ++){
-            if (ids.get(i)>id_max){
-                id_max = ids.get(i);
+            int currentId = (Integer) ids.get(i);
+            if (currentId > id_max){
+                id_max = currentId;
             }
         }
         return id_max;
@@ -33,13 +32,36 @@ public class Bibliotheque {
         return temp;
     }
 
-    public void addBook(String title, String author) {
-        Integer id = getIdMax();
-        Book[] livre = new Book{title,author,id};
-        bibliotheque.add(book);
+    public void addBook(String title,String author) {
+        int id = getIdMax(getIds());
+        Book livre = new Book(
+            title,
+            author,
+            id
+        );
+        bibliotheque.add(livre);
     }
 
-    public deletBook(id) {
+    public boolean deletBook(int id) {
+        Book book = getBookFromId(id);
         bibliotheque.remove(book);
+        return true;
+    }
+
+    public Book getBookFromId(int id){
+        for (int i = 0; i < bibliotheque.size(); i ++){
+            if(bibliotheque.get(i).getId()==id){
+                return bibliotheque.get(i);
+            }
+        }
+        return (new Book(null, null, -1));
+    }
+
+    public boolean loan(int id){
+        return (getBookFromId(id).loan());
+    }
+
+    public boolean retbook(int id){
+        return (getBookFromId(id).retbook());
     }
 }

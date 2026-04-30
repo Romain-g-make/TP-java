@@ -19,7 +19,6 @@ public class Main {
                     System.out.println("Quel est l'autheur du livre ?");
                     Scanner inputAutheur = new Scanner(System.in);
                     autheur = inputAutheur.next();
-
                     System.out.println("Vous venez de créer un livre !");
                 } else if (choice == 2) {
                     // bibliothèque.showBooks;
