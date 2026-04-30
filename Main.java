@@ -11,29 +11,19 @@ public class Main {
                 System.out.print("Que voulez-vous faire ? ");
                 Scanner input = new Scanner(System.in);
                 choice = Integer.parseInt(input.nextLine());
-                System.out.println("Votre choix : " + choice);
                 if (choice == 1) {
                     bibliotheque.addBook();
                 } else if (choice == 2) {
                     bibliotheque.showBooks();
                 } else if (choice == 3) {
-                    bibliotheque.showBooks();
-                    System.out.println("-- Emprunt d'un livre --\nQuel est l'ID du livre ?");
-                    Scanner inputID = new Scanner(System.in);
-                    int id = Integer.parseInt(inputID.next());
-                    bibliotheque.loan(id);
+                    bibliotheque.loan();
                 } else if (choice == 4) {
-                    bibliotheque.showBooks();
-                    System.out.println("-- Retour d'un livre --\nQuel est l'ID du livre ?");
-                    Scanner inputID = new Scanner(System.in);
-                    int id = Integer.parseInt(inputID.next());
-                    bibliotheque.retbook(id);
+                    bibliotheque.retbook();
                 } else if (choice == 5) {
-                    bibliotheque.showBooks();
-                    System.out.println("-- Suppression d'un livre --\nQuel est l'ID du livre ?");
-                    Scanner inputID = new Scanner(System.in);
-                    int id = Integer.parseInt(inputID.next());
-                    bibliotheque.deletBook(id);
+                    bibliotheque.deleteBook();
+                } else if ( choice == 6 ) {
+                    System.out.println("A bientôt !");
+                    break;
                 }
             }
         } catch (Exception e) {
