@@ -1,7 +1,5 @@
 # Bibliotheque Java
 
----
-
 ## Fonctionnalités
 
 ### Techniques utilisées
@@ -19,13 +17,10 @@
 - Emprunter un livre
 - Retourner un livre
 
----
 
 ## Language utilisée
 
 - Java
-
----
 
 
 ## Auteurs

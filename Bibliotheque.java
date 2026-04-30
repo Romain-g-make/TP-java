@@ -32,20 +32,31 @@ public class Bibliotheque {
         }
     }
 
+    public void clearTerminal() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     public void addBook() {
+        clearTerminal();
         System.out.print("-- Ajout d'un livre --\nQuel est le titre du livre ? ");
         Scanner inputTitle = new Scanner(System.in);
         String title = inputTitle.next();
-        System.out.print("Quel est l'autheur du livre ? ");
+        System.out.print("Quel est l'auteur du livre ? ");
         Scanner inputAuthor = new Scanner(System.in);
         String author = inputAuthor.next();
         int id = getIdMax(getIds());
-        Book livre = new Book(title, author, id+1);
+        Book livre = new Book(title, author, id + 1);
         bibliotheque.add(livre);
         System.out.println("Vous venez de créer un livre !");
     }
 
-    public boolean deletBook(int id) {
+    public boolean deleteBook() {
+        clearTerminal();
+        showBooks();
+        System.out.println("-- Suppression d'un livre --\nQuel est l'ID du livre ?");
+        Scanner inputID = new Scanner(System.in);
+        int id = Integer.parseInt(inputID.next());
         Book book = getBookFromId(id);
         bibliotheque.remove(book);
         return true;
@@ -60,11 +71,21 @@ public class Bibliotheque {
         return (new Book(null, null, -1));
     }
 
-    public boolean loan(int id) {
+    public boolean loan() {
+        clearTerminal();
+        showBooks();
+        System.out.println("-- Emprunt d'un livre --\nQuel est l'ID du livre ?");
+        Scanner inputID = new Scanner(System.in);
+        int id = Integer.parseInt(inputID.next());
         return (getBookFromId(id).loan());
     }
 
-    public boolean retbook(int id) {
+    public boolean retbook() {
+        clearTerminal();
+        showBooks();
+        System.out.println("-- Retour d'un livre --\nQuel est l'ID du livre ?");
+        Scanner inputID = new Scanner(System.in);
+        int id = Integer.parseInt(inputID.next());
         return (getBookFromId(id).retbook());
     }
 }
