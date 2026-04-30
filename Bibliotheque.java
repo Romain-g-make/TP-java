@@ -37,7 +37,7 @@ public class Bibliotheque {
         System.out.print("-- Ajout d'un livre --\nQuel est le titre du livre ? ");
         Scanner inputTitle = new Scanner(System.in);
         String title = inputTitle.next();
-        System.out.print("Quel est l'autheur du livre ? ");
+        System.out.print("Quel est l'auteur du livre ? ");
         Scanner inputAuthor = new Scanner(System.in);
         String author = inputAuthor.next();
         int id = getIdMax(getIds());
