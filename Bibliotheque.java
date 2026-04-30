@@ -56,4 +56,12 @@ public class Bibliotheque {
         }
         return (new Book(null, null, -1));
     }
+
+    public boolean loan(int id){
+        return (getBookFromId(id).loan());
+    }
+
+    public boolean retbook(int id){
+        return (getBookFromId(id).retbook());
+    }
 }
