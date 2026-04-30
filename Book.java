@@ -16,7 +16,7 @@ public class Book {
 
     public String get_info(){
         if (loan){
-            return (this.id+". "+this.title+" "+this.author+" est emprunté depuis le : "+this.date_loan);
+            return (this.id+". "+this.title+" "+this.author+" est emprunté depuis le : "+this.date_loan.getTime());
         }
         return (this.id+". "+this.title+" "+this.author);        
     }
