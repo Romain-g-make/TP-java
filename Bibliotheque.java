@@ -33,7 +33,13 @@ public class Bibliotheque {
         }
     }
 
+    public void clearTerminal() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     public void addBook() {
+        clearTerminal();
         System.out.print("-- Ajout d'un livre --\nQuel est le titre du livre ? ");
         Scanner inputTitle = new Scanner(System.in);
         String title = inputTitle.next();
@@ -47,6 +53,7 @@ public class Bibliotheque {
     }
 
     public boolean deleteBook() {
+        clearTerminal();
         showBooks();
         System.out.println("-- Suppression d'un livre --\nQuel est l'ID du livre ?");
         Scanner inputID = new Scanner(System.in);
@@ -66,6 +73,7 @@ public class Bibliotheque {
     }
 
     public boolean loan() {
+        clearTerminal();
         showBooks();
         System.out.println("-- Emprunt d'un livre --\nQuel est l'ID du livre ?");
         Scanner inputID = new Scanner(System.in);
@@ -74,6 +82,7 @@ public class Bibliotheque {
     }
 
     public boolean retbook() {
+        clearTerminal();
         showBooks();
         System.out.println("-- Retour d'un livre --\nQuel est l'ID du livre ?");
         Scanner inputID = new Scanner(System.in);

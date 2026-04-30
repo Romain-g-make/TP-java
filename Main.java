@@ -2,12 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        
         int choice;
         Bibliotheque bibliotheque = new Bibliotheque();
+        bibliotheque.clearTerminal();
         System.out.println("Bienvenu dans notre nouvelle bibliothèque.");
         try {
             while (true) {
-                System.out.println("Voici les actions disponibles :\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Supprimer un livre\n6 - Partir de la bibliothèque");
+                System.out.println(
+                        "Voici les actions disponibles :\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Supprimer un livre\n6 - Partir de la bibliothèque");
                 System.out.print("Que voulez-vous faire ? ");
                 Scanner input = new Scanner(System.in);
                 choice = Integer.parseInt(input.nextLine());
@@ -21,7 +24,7 @@ public class Main {
                     bibliotheque.retbook();
                 } else if (choice == 5) {
                     bibliotheque.deleteBook();
-                } else if ( choice == 6 ) {
+                } else if (choice == 6) {
                     System.out.println("A bientôt !");
                     break;
                 }
