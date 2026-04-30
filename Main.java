@@ -4,9 +4,10 @@ public class Main {
     public static void main(String[] args) {
         int choice;
         Bibliotheque bibliotheque = new Bibliotheque();
+        System.out.println("Bienvenu dans notre nouvelle bibliothèque.\n");
         try {
             while (true) {
-                System.out.println("Bienvenu dans notre nouvelle bibliothèque.\nQue voulez-vous faire ?\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Partir de la bibliothèque");
+                System.out.println("\nQue voulez-vous faire ?\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Partir de la bibliothèque");
                 Scanner input = new Scanner(System.in);
                 choice = Integer.parseInt(input.nextLine());
                 System.out.println("Votre choix : " + choice);
@@ -28,6 +29,7 @@ public class Main {
                     int id = Integer.parseInt(inputID.next());
                     bibliotheque.loan(id);
                 } else if (choice == 4) {
+                    bibliotheque.showBooks();
                     System.out.println("-- Retour d'un livre --\nQuel est l'ID du livre ?");
                     Scanner inputID = new Scanner(System.in);
                     int id = Integer.parseInt(inputID.next());
