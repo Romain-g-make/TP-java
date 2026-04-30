@@ -13,14 +13,7 @@ public class Main {
                 choice = Integer.parseInt(input.nextLine());
                 System.out.println("Votre choix : " + choice);
                 if (choice == 1) {
-                    System.out.print("-- Ajout d'un livre --\nQuel est le titre du livre ? ");
-                    Scanner inputTitle = new Scanner(System.in);
-                    String titre = inputTitle.next();
-                    System.out.print("Quel est l'autheur du livre ? ");
-                    Scanner inputAuteur = new Scanner(System.in);
-                    String auteur = inputAuteur.next();
-                    bibliotheque.addBook(titre, auteur);
-                    System.out.println("Vous venez de créer un livre !");
+                    bibliotheque.addBook();
                 } else if (choice == 2) {
                     bibliotheque.showBooks();
                 } else if (choice == 3) {
