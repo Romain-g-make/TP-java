@@ -4,17 +4,19 @@ public class Main {
     public static void main(String[] args) {
         int choice;
         Bibliotheque bibliotheque = new Bibliotheque();
+        System.out.println("Bienvenu dans notre nouvelle bibliothèque.");
         try {
             while (true) {
-                System.out.println("Bienvenu dans notre nouvelle bibliothèque.\nQue voulez-vous faire ?\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Partir de la bibliothèque");
+                System.out.println("Voici les actions disponibles :\n1 - Ajouter un livre\n2 - Afficher la liste des livres\n3 - Emprunter un livre\n4 - Retourner un livre\n5 - Partir de la bibliothèque");
+                System.out.print("Que voulez-vous faire ? ");
                 Scanner input = new Scanner(System.in);
                 choice = Integer.parseInt(input.nextLine());
                 System.out.println("Votre choix : " + choice);
                 if (choice == 1) {
-                    System.out.println("-- Ajout d'un livre --\nQuel est le titre du livre ?");
+                    System.out.print("-- Ajout d'un livre --\nQuel est le titre du livre ? ");
                     Scanner inputTitle = new Scanner(System.in);
                     String titre = inputTitle.next();
-                    System.out.println("Quel est l'autheur du livre ?");
+                    System.out.print("Quel est l'autheur du livre ? ");
                     Scanner inputAuteur = new Scanner(System.in);
                     String auteur = inputAuteur.next();
                     bibliotheque.addBook(titre, auteur);
